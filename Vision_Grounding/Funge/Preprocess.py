@@ -85,16 +85,35 @@ def step1_download_datasets():
     import importlib
  
     for cfg in DATASET_CONFIGS:
+        npz_path = Path(DOWNLOAD_ROOT) / f"{cfg['npz_stem']}.npz"
+
+        if npz_path.exists():
+            print(f"\n[Skip] Found existing NPZ: {npz_path}")
+            continue
+
         mod = importlib.import_module(cfg["module"])
         bench_cls = getattr(mod, cfg["bench_class"])
         print(f"\n[Download] {cfg['bench_class']} -> {DOWNLOAD_ROOT}")
-        _ = bench_cls(
-            root=DOWNLOAD_ROOT,
-            split="train",
-            download=True,
-            size=IMAGE_SIZE,
-        )
-        print(f"[Done] {cfg['bench_class']} download/verification complete")
+        try:
+            _ = bench_cls(
+                root=DOWNLOAD_ROOT,
+                split="train",
+                download=True,
+                size=IMAGE_SIZE,
+            )
+            print(f"[Done] {cfg['bench_class']} download/verification complete")
+        except KeyError as e:
+            # Some archives can be downloaded correctly but do not expose train_label.
+            if "train_label" in str(e):
+                if npz_path.exists():
+                    print(
+                        f"[Warn] {cfg['bench_class']} raised {e}, but {npz_path.name} exists. Proceeding."
+                    )
+                    continue
+                raise RuntimeError(
+                    f"Download attempted but expected file is missing: {npz_path}"
+                ) from e
+            raise
  
  
 def step2_extract_npz(cfg) -> Path:
@@ -164,11 +183,22 @@ def step3_crop(cfg, extract_root: Path) -> List[Tuple[str, str]]:
  
         images_dir = split_dir / "images"
         labels_dir = None
-        for label_candidate in ["labels", "label", "label_C1", "masks", "mask"]:
+        for label_candidate in ["labels", "label", "label_C4", "label_C1", "masks", "mask"]:
             candidate = split_dir / label_candidate
             if candidate.is_dir():
                 labels_dir = candidate
                 break
+
+        if labels_dir is None:
+            dynamic_label_dirs = sorted(
+                [
+                    d for d in split_dir.iterdir()
+                    if d.is_dir() and re.fullmatch(r"label_C\d+", d.name)
+                ],
+                key=lambda p: (0 if p.name == "label_C4" else 1, p.name),
+            )
+            if dynamic_label_dirs:
+                labels_dir = dynamic_label_dirs[0]
  
         if not images_dir.is_dir():
             print(f"  [Skip] No images directory: {split_dir}")
