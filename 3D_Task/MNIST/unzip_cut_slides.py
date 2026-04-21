@@ -11,8 +11,8 @@ BASE_DIR = './Qrgan3DMINist'
 # NPZ_FILE = './nodulemnist3d_64.npz?download=1'
 # BASE_DIR = './NoduleMINist'
 
-NPZ_FILE = './synapsemnist3d_64.npz?download=1'
-BASE_DIR = './SynapseMNIST'
+# NPZ_FILE = './synapsemnist3d_64.npz?download=1'
+# BASE_DIR = './SynapseMNIST'
 
 NUM_SLICES_TO_KEEP = 64 
 SPLITS = ['train', 'test', 'val']
