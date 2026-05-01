@@ -21,7 +21,6 @@
 | VinDr-CXR | 2D | Chest X-ray | [![PhysioNet](https://img.shields.io/badge/PhysioNet-0072BC)](https://physionet.org/content/vindr-cxr/1.0.0/) |
 | VinDr-Mammo | 2D | Breast X-ray | [![PhysioNet](https://img.shields.io/badge/PhysioNet-0072BC)](https://physionet.org/content/vindr-mammo/1.0.0/) |
 | Chest imagenome | 2D | Chest X-ray | [![PhysioNet](https://img.shields.io/badge/PhysioNet-0072BC)](https://physionet.org/content/chest-imagenome/1.0.0/) |
-| DeepLesion | 2D | CT | [![Box](https://img.shields.io/badge/Box-0061D5?logo=box&logoColor=ffffff)](https://nihcc.app.box.com/v/DeepLesion) |
 | Kvasir-SEG | 2D | Gastrointestinal (GI) tract | [![Simula](https://img.shields.io/badge/Simula-004B93)](https://datasets.simula.no/kvasir-seg/) |
 | USforKidneyMSBench(CT2USforKidneySeg) | 2D | Ultrasound | [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=ffffff)](https://github.com/zekikus/MedSegBench) |
 | UltrasoundNerveMSBench | 2D | Ultrasound | [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=ffffff)](https://github.com/zekikus/MedSegBench) |
@@ -34,9 +33,9 @@
 | Path-VQA | 2D | Pathdology | [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?logo=huggingface&logoColor=000000)](https://huggingface.co/datasets/flaviagiammarino/path-vqa) |
 | PMC-VQA | 2D | Multi_modalities | [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?logo=huggingface&logoColor=000000)](https://huggingface.co/datasets/RadGenome/PMC-VQA) |
 | ROCO-VQA | 2D | Multi_modalities | [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?logo=huggingface&logoColor=000000)](https://huggingface.co/datasets/adishourya/ROCO-QA) |
-| MedPIX | 2D | Multi_modalities | [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=ffffff)](https://github.com/CHILab1/MedPix-2.0) [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?logo=huggingface&logoColor=000000)](https://huggingface.co/datasets/adishourya/MEDPIX-ClinQA) |
+| MedPIX | 2D | Multi_modalities | [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?logo=huggingface&logoColor=000000)](https://huggingface.co/datasets/adishourya/MEDPIX-ClinQA) |
 | RadImageNet-VQA | 2D | Multi_modalities | [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?logo=huggingface&logoColor=000000)](https://huggingface.co/datasets/raidium/RadImageNet-VQA) |
-| VQA_RAD | 2D | Multi_modalities | [![OSF](https://img.shields.io/badge/OSF-2CB9F1?logo=osf&logoColor=ffffff)](https://osf.io/89kps/overview) |
+| VQA_RAD | 2D | Multi_modalities | [![OSF](https://img.shields.io/badge/OSF-2CB9F1?logo=osf&logoColor=ffffff)](https://osf.io/89kps/overview) [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?logo=huggingface&logoColor=000000)](https://huggingface.co/datasets/flaviagiammarino/vqa-rad)|
 | MIMIC-CXR-VQA | 2D | Chest X-ray | [![PhysioNet](https://img.shields.io/badge/PhysioNet-0072BC)](https://physionet.org/content/medical-cxr-vqa-dataset/1.0.0/) |
 | MedMCQA | Text | Biological text | [![Google_Drive](https://img.shields.io/badge/Google_Drive-4285F4?logo=googledrive&logoColor=ffffff)](https://drive.usercontent.google.com/download?id=15VkJdq5eyWIkfb_aoD3oS8i4tScbHYky&export=download&authuser=0) |
 | PubMedQA | Text | Biological text | [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?logo=huggingface&logoColor=000000)](https://huggingface.co/datasets/qiaojin/PubMedQA) |
@@ -44,8 +43,8 @@
 | PublicHealthQA | Text | Biological text | [![Kaggle](https://img.shields.io/badge/Kaggle-20BEFF?logo=kaggle&logoColor=ffffff)](https://www.kaggle.com/datasets/xhlulu/covidqa) [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?logo=huggingface&logoColor=000000)](https://huggingface.co/datasets/xhluca/publichealth-qa/discussions) |
 | MMDental | 3D | Dental CBCT | [![Figshare](https://img.shields.io/badge/Figshare-556472?logo=figshare&logoColor=ffffff)](https://springernature.figshare.com/articles/dataset/MMDental_-_A_multimodal_dataset_of_tooth_CBCT_images_with_expert_medical_records/28505276?file=53187695) |
 | CT-RATE | 3D | Chest CT | [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?logo=huggingface&logoColor=000000)](https://huggingface.co/datasets/ibrahimhamamci/CT-RATE) |
-| MRNet | 3D | Knee CT | [![Stanford_AIMI](https://img.shields.io/badge/Stanford_AIMI-8C1515)](https://aimi.stanford.edu/datasets/mrnet-knee-mris) |
-| CirrMRI600 | 3D | 3D liver MRI | [![OSF](https://img.shields.io/badge/OSF-2CB9F1?logo=osf&logoColor=ffffff)](https://osf.io/cuk24/overview) |
+| MRNet | 3D | Knee CT | [![Stanford_AIMI](https://img.shields.io/badge/Stanford_AIMI-8C1515)](https://aimi.stanford.edu/datasets/mrnet-knee-mris) [![Kaggle](https://img.shields.io/badge/Kaggle-20BEFF?logo=kaggle&logoColor=ffffff)](https://www.kaggle.com/datasets/cjinny/mrnet-v1)|
+| CirrMRI600 | 3D | 3D liver MRI | [![OSF](https://img.shields.io/badge/OSF-2CB9F1?logo=osf&logoColor=ffffff)](https://osf.io/cuk24/overview) [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?logo=huggingface&logoColor=000000)](https://huggingface.co/datasets/onkarsus13/AllMedicalCombine/tree/main)|
 | OrganMNIST(LiTS) | 3D | Abdominal CT scans | [![Zenodo](https://img.shields.io/badge/Zenodo-1682D4?logo=zenodo&logoColor=ffffff)](https://zenodo.org/records/10519652) |
 | NoduleMNIST | 3D | Chest CT | [![Zenodo](https://img.shields.io/badge/Zenodo-1682D4?logo=zenodo&logoColor=ffffff)](https://zenodo.org/records/10519652) |
 | SynapseMNIST(MitoEM dataset) | 3D | Pathdology | [![Zenodo](https://img.shields.io/badge/Zenodo-1682D4?logo=zenodo&logoColor=ffffff)](https://zenodo.org/records/10519652) |
@@ -56,7 +55,7 @@
 | HaN-Seg | 3D | Head and Neck MRI,CT | [![Zenodo](https://img.shields.io/badge/Zenodo-1682D4?logo=zenodo&logoColor=ffffff)](https://zenodo.org/records/7442914) |
 | Chexpert_plus | 2D | Chest X-ray | [![Stanford_AIMI](https://img.shields.io/badge/Stanford_AIMI-8C1515)](https://stanfordaimi.azurewebsites.net/datasets/5158c524-d3ab-4e02-96e9-6ee9efc110a1) |
 | Retinal Disease Classification | 2D | Optical Coherence Tomography | [![Kaggle](https://img.shields.io/badge/Kaggle-20BEFF?logo=kaggle&logoColor=ffffff)](https://www.kaggle.com/datasets/andrewmvd/retinal-disease-classification) |
-| LC25000 | 2D | Pathlogy | [![AcademicTorrents](https://img.shields.io/badge/AcademicTorrents-008080)](https://academictorrents.com/details/7a638ed187a6180fd6e464b3666a6ea0499af4af) |
+| LC25000 | 2D | Pathlogy | [![AcademicTorrents](https://img.shields.io/badge/AcademicTorrents-008080)](https://academictorrents.com/details/7a638ed187a6180fd6e464b3666a6ea0499af4af) [![Kaggle](https://img.shields.io/badge/Kaggle-20BEFF?logo=kaggle&logoColor=ffffff)](https://www.kaggle.com/datasets/javaidahmadwani/lc25000)  |
 | OmniMedVQA | 2D | Multi_modalities | [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?logo=huggingface&logoColor=000000)](https://huggingface.co/datasets/foreverbeliever/OmniMedVQA) |
 | BraTS-MEN | 3D | Brain MRI | [![Synapse](https://img.shields.io/badge/Synapse-2176C7)](https://www.synapse.org/Synapse:syn51514106) |
 
