@@ -1,4 +1,25 @@
-# Processing_Code
+# Dataset Preprocess
+
+The following datasets are supported and should be processed using the provided scripts:
+
+- BraTS-MEN
+- BraTS-PED
+- CT-RATE
+- ChirrMRI600
+- HaN-Seg
+- MedMNIST
+- MRNet
+- RadGenomme-Chest-CT
+- SynthRAD
+- PanNuke
+- PublicHealthQA
+- ROCO-QA
+- ChestImagenome
+- Gastrointestinal
+- Skin-Image
+- Ultrasound
+- VinDr-CXR
+- VinDr-Mammo
 
 ## 3D_Task
 
@@ -32,17 +53,11 @@
 
 ## Image_Classification
 
-1. MIMIC-CXR-LT
-   - a. [Image_Classification/MIMIC-CXR-LT/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Image_Classification/MIMIC-CXR-LT/Preprocess.py)
-
-2. MNIST
+1. MNIST
    - a. [Image_Classification/MNIST/unzip_MNIST.py](https://github.com/ziz-797/Processing_Code/blob/main/Image_Classification/MNIST/unzip_MNIST.py)
 
-3. PanNuke
+2. PanNuke
    - a. [Image_Classification/PanNuke/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Image_Classification/PanNuke/Preprocess.py)
-
-4. SD-198
-   - a. [Image_Classification/SD-198/Test.json](https://github.com/ziz-797/Processing_Code/blob/main/Image_Classification/SD-198/Test.json)
 
 ## QA
 
@@ -59,30 +74,21 @@
 1. ChestImagenome
    - a. [Vision_Grounding/ChestImagenome/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/ChestImagenome/Preprocess.py)
 
-2. DeepLesion
-   - a. [Vision_Grounding/DeepLesion/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/DeepLesion/Preprocess.py)
-
-3. Funge
-   - a. [Vision_Grounding/Funge/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/Funge/Preprocess.py)
-
-4. Gastrointestinal
+2. Gastrointestinal
    - a. [Vision_Grounding/Gastrointestinal/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/Gastrointestinal/Preprocess.py)
 
-5. MRI
-   - a. [Vision_Grounding/MRI/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/MRI/Preprocess.py)
-
-6. PanNuke
+3. PanNuke
    - a. [Vision_Grounding/PanNuke/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/PanNuke/Preprocess.py)
    - b. [Vision_Grounding/PanNuke/Test.json](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/PanNuke/Test.json)
 
-7. Skin_Image
+4. Skin_Image
    - a. [Vision_Grounding/Skin_Image/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/Skin_Image/Preprocess.py)
 
-8. Ultrasound
+5. Ultrasound
    - a. [Vision_Grounding/Ultrasound/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/Ultrasound/Preprocess.py)
 
-9. VindrCXR
+6. VindrCXR
    - a. [Vision_Grounding/VindrCXR/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/VindrCXR/Preprocess.py)
 
-10. VindrMammo
+7. VindrMammo
     - a. [Vision_Grounding/VindrMammo/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/VindrMammo/Preprocess.py)
