@@ -83,32 +83,48 @@ The following datasets are supported and should be processed using the provided 
 
 ## 3D_Task
 
-1. BraTS-MEN
+**1. BraTS-MEN**
    - a. [3D_Task/BraTS-MEN/cut_slides.py](https://github.com/ziz-797/Processing_Code/blob/main/3D_Task/BraTS-MEN/cut_slides.py)
-
-2. BraTS-PED
+   
+**Description**: `cut_slides.py` — This script converts the original `t1n.nii.gz` files from each BraTS-MEN case into 2D T1-weighted MRI slices. We follow the test split defined by the impression-text annotations in [RadGenome-Brain_MRI](https://huggingface.co/datasets/JiayuLei/RadGenome-Brain_MRI). `INPUT_ROOT` should be set to `./BraTS-MEN-Train`.
+   
+**2. BraTS-PED**
    - a. [3D_Task/BraTS-PED/cut_slides.py](https://github.com/ziz-797/Processing_Code/blob/main/3D_Task/BraTS-PED/cut_slides.py)
 
-3. CT-RATE
+**Description**: `cut_slides.py` — This script converts the original `t1n.nii.gz` and `t2w.nii.gz` files from each BraTS-PED case into 2D T1-weighted and T2-weighted MRI slices. `INPUT_ROOT` should be set to `./BraTS2023-PED`.
+
+**3. CT-RATE**
    - a. [3D_Task/CT-RATE/cut_slides.py](https://github.com/ziz-797/Processing_Code/blob/main/3D_Task/CT-RATE/cut_slides.py)
    - b. [3D_Task/CT-RATE/CT2Xray.py](https://github.com/ziz-797/Processing_Code/blob/main/3D_Task/CT-RATE/CT2Xray.py)
 
-4. ChirrMRI600
-   - a. [3D_Task/ChirrMRI600/cut_slides_split.py](https://github.com/ziz-797/Processing_Code/blob/main/3D_Task/ChirrMRI600/cut_slides_split.py)
+**Description**: `cut_slides.py` — This script converts the original 3D CT volumes from each case into 2D CT slices. `CT2Xray.py` — This script converts the original 3D CT volumes into 2D chest X-ray projection images. `INPUT_ROOT` should be set to `./CT_DATA/data_volumes/dataset`.
 
-5. HaN-Seg
+**4. ChirrMRI600**
+   - a. [3D_Task/ChirrMRI600/cut_slides_split.py](https://github.com/ziz-797/Processing_Code/blob/main/3D_Task/ChirrMRI600/cut_slides_split.py)
+  
+**Description**: ChirrMRI600 contains liver MRI cases with different cirrhosis grades and healthy controls. We label healthy cases as 'No liver cirrhosis' and split the healthy cases into training and test sets with a 7:3 ratio. `Cirrhosis_T1_slide_folders.csv` and `Cirrhosis_T2_slide_folders.csv` define the split after adding the healthy cases. `cut_slides_split.py` converts 3D liver MRI volumes into 2D slices and organizes them according to the CSV split. Place the two CSV files in the original data folder and set this folder as the input path.
+
+**5. HaN-Seg**
    - a. [3D_Task/HaN-Seg/cut_slides.py](https://github.com/ziz-797/Processing_Code/blob/main/3D_Task/HaN-Seg/cut_slides.py)
 
-6. MNIST
+**Description**: `cut_slides.py` — This script converts the original 3D CT volumes and MRI volumes into 2D slices, the input root shoud be set to `./HaN-Seg/set_1`.
+
+**6. MNIST**
    - a. [3D_Task/MNIST/unzip_cut_slides.py](https://github.com/ziz-797/Processing_Code/blob/main/3D_Task/MNIST/unzip_cut_slides.py)
 
-7. MRNet
+**Description**: `unzip_cut_slides.py` — This script extracts the downloaded Zenodo `.npz` files and converts the original 3D `.npy` files into 2D slices. It supports preprocessing for all 3D MedMNIST classification datasets. The input root set to the download `npz` files.
+
+**7. MRNet**
    - a. [3D_Task/MRNet/cut_slides.py](https://github.com/ziz-797/Processing_Code/blob/main/3D_Task/MRNet/cut_slides.py)
 
-8. RadGenomme-Chest-CT
+**Description**: `cut_slides.py` — This script converts each 3D knee MRI volume into 2D slices from the `axial`, `coronal`, and `sagittal` views, with 10 slices extracted for each view. We map MRNet labels as follows: `abnormal = 0` is labeled as `healthy`, while cases with `abnormal = 1`, `acl = 0`, and `meniscus = 0` are labeled as `other diseases`.
+
+**8. RadGenomme-Chest-CT**
    - a. [3D_Task/RadGenomme-Chest-CT/cut_slides.py](https://github.com/ziz-797/Processing_Code/blob/main/3D_Task/RadGenomme-Chest-CT/cut_slides.py)
 
-9. SynthRAD
+**Description**: `cut_slides.py` — This script converts the original 3D CT volumes from each case into 2D CT slices. The input root should be set to `./RadGenomme-Chest-CT/dataset`.
+
+**9. SynthRAD**
    - a. [3D_Task/SynthRAD/cut_slides.py](https://github.com/ziz-797/Processing_Code/blob/main/3D_Task/SynthRAD/cut_slides.py)
 
 ## Image_Classification
