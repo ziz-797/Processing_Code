@@ -1,5 +1,5 @@
 # Dataset Download
-
+All test sets used in our benchmark can be downloaded through the links provided in the table. Please note that, for some datasets, we use redistributed versions rather than the original official download sources: Kvasir, LC25000, and MRNet are obtained from Kaggle, while PublicHealthQA, CirrMRI600, and VQA_RAD are obtained from Hugging Face.
 
 | Dataset | Dim | Modality | Download |
 | --- | --- | --- | --- |
