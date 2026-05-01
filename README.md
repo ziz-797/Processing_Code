@@ -42,7 +42,7 @@
 | PubMedQA | Text | Biological text | [🔗](https://huggingface.co/datasets/qiaojin/PubMedQA) |
 | MedicalQARetrieval | Text | Biological text | [🔗](https://huggingface.co/datasets/mteb/medical_qa) |
 | PublicHealthQA | Text | Biological text | [🔗1](https://www.kaggle.com/datasets/xhlulu/covidqa) [🔗2](https://huggingface.co/datasets/xhluca/publichealth-qa/discussions) |
-| MMDental_f2i| Text | Dental Diagnosis and Treatment plan | [🔗](https://springernature.figshare.com/articles/dataset/MMDental_-_A_multimodal_dataset_of_tooth_CBCT_images_with_expert_medical_records/28505276?file=53187695) |
+| MMDental| 3D | Dental CBCT | [🔗](https://springernature.figshare.com/articles/dataset/MMDental_-_A_multimodal_dataset_of_tooth_CBCT_images_with_expert_medical_records/28505276?file=53187695) |
 | CT-RATE | 3D | Chest CT | [🔗](https://huggingface.co/datasets/ibrahimhamamci/CT-RATE) |
 | MRNet | 3D | Knee CT | [🔗](https://aimi.stanford.edu/datasets/mrnet-knee-mris) |
 | CirrMRI600 | 3D | 3D liver MRI | [🔗](https://osf.io/cuk24/overview) |
