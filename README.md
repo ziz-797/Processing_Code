@@ -17,23 +17,22 @@
 | OrganSMNIST(LiTS) | 2D | Abdominal CT scans(Sagittal) | [![Zenodo](https://img.shields.io/badge/Zenodo-1682D4?logo=zenodo&logoColor=ffffff)](https://zenodo.org/records/10519652) |
 | Kvasir | 2D | Gastrointestinal (GI) tract | [![Simula](https://img.shields.io/badge/Simula-004B93)](https://datasets.simula.no/kvasir/) [![Kaggle](https://img.shields.io/badge/Kaggle-20BEFF?logo=kaggle&logoColor=ffffff)](https://www.kaggle.com/datasets/meetnagadia/kvasir-dataset?select=kvasir-dataset) |
 | APTOS-2019 | 2D | Optical Coherence Tomography | [![Kaggle](https://img.shields.io/badge/Kaggle-20BEFF?logo=kaggle&logoColor=ffffff)](https://www.kaggle.com/competitions/aptos2019-blindness-detection/overview) |
-| PanDuke | 2D | Pathdology | [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?logo=huggingface&logoColor=000000)](https://huggingface.co/datasets/RationAI/PanNuke) |
+| PanNuke | 2D | Pathdology | [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?logo=huggingface&logoColor=000000)](https://huggingface.co/datasets/RationAI/PanNuke) |
 | VinDr-CXR | 2D | Chest X-ray | [![PhysioNet](https://img.shields.io/badge/PhysioNet-0072BC)](https://physionet.org/content/vindr-cxr/1.0.0/) |
 | VinDr-Mammo | 2D | Breast X-ray | [![PhysioNet](https://img.shields.io/badge/PhysioNet-0072BC)](https://physionet.org/content/vindr-mammo/1.0.0/) |
-| Chest imagenome | 2D | Chest X-ray | [![PhysioNet](https://img.shields.io/badge/PhysioNet-0072BC)](https://physionet.org/content/chest-imagenome/1.0.0/) |
+| Chest-imagenome | 2D | Chest X-ray | [![PhysioNet](https://img.shields.io/badge/PhysioNet-0072BC)](https://physionet.org/content/chest-imagenome/1.0.0/) |
 | Kvasir-SEG | 2D | Gastrointestinal (GI) tract | [![Simula](https://img.shields.io/badge/Simula-004B93)](https://datasets.simula.no/kvasir-seg/) |
 | USforKidneyMSBench(CT2USforKidneySeg) | 2D | Ultrasound | [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=ffffff)](https://github.com/zekikus/MedSegBench) |
 | UltrasoundNerveMSBench | 2D | Ultrasound | [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=ffffff)](https://github.com/zekikus/MedSegBench) |
 | UWSkinCancerMSBench | 2D | Skin Image | [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=ffffff)](https://github.com/zekikus/MedSegBench) |
 | Isic2018MSBench(ISIC 2018 Challenge) | 2D | Skin Image | [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=ffffff)](https://github.com/zekikus/MedSegBench) |
 | PolypGenMSBench | 2D | Gastrointestinal (GI) tract | [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=ffffff)](https://github.com/zekikus/MedSegBench) |
-| IdribMSBench(Indian Diabetic Retinopathy) | 2D | Optical Coherence Tomography | [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=ffffff)](https://github.com/zekikus/MedSegBench) |
 | MIMIC-CXR | 2D | Chest X-ray | [![PhysioNet](https://img.shields.io/badge/PhysioNet-0072BC)](https://physionet.org/content/mimic-cxr/2.1.0/) |
 | USData | 2D | Ultrasound | [![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=ffffff)](https://github.com/LijunRio/Ultrasound-Report-Generation) |
 | Path-VQA | 2D | Pathdology | [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?logo=huggingface&logoColor=000000)](https://huggingface.co/datasets/flaviagiammarino/path-vqa) |
 | PMC-VQA | 2D | Multi_modalities | [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?logo=huggingface&logoColor=000000)](https://huggingface.co/datasets/RadGenome/PMC-VQA) |
 | ROCO-VQA | 2D | Multi_modalities | [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?logo=huggingface&logoColor=000000)](https://huggingface.co/datasets/adishourya/ROCO-QA) |
-| MedPIX | 2D | Multi_modalities | [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?logo=huggingface&logoColor=000000)](https://huggingface.co/datasets/adishourya/MEDPIX-ClinQA) |
+| MedPIX-VQA | 2D | Multi_modalities | [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?logo=huggingface&logoColor=000000)](https://huggingface.co/datasets/adishourya/MEDPIX-ClinQA) |
 | RadImageNet-VQA | 2D | Multi_modalities | [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?logo=huggingface&logoColor=000000)](https://huggingface.co/datasets/raidium/RadImageNet-VQA) |
 | VQA_RAD | 2D | Multi_modalities | [![OSF](https://img.shields.io/badge/OSF-2CB9F1?logo=osf&logoColor=ffffff)](https://osf.io/89kps/overview) [![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?logo=huggingface&logoColor=000000)](https://huggingface.co/datasets/flaviagiammarino/vqa-rad)|
 | MIMIC-CXR-VQA | 2D | Chest X-ray | [![PhysioNet](https://img.shields.io/badge/PhysioNet-0072BC)](https://physionet.org/content/medical-cxr-vqa-dataset/1.0.0/) |
