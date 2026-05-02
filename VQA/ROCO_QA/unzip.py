@@ -7,7 +7,7 @@ from collections import defaultdict
 
 
 INPUT_DIR = "./ROCO-QA/data"
-OUTPUT_DIR = "./ROCO-QA/example"
+OUTPUT_DIR = "./ROCO-QA/images"
 
 FILE_ORDER = [
     "Vaild-00000-of-00001-1ddc94eb806f44ae.parquet",
