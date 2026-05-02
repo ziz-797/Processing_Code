@@ -131,54 +131,64 @@ The following datasets are supported and should be processed using the provided 
  
 ## Image_Classification
 
-1. MNIST
+**1. MNIST**
    - a. [Image_Classification/MNIST/unzip_MNIST.py](https://github.com/ziz-797/Processing_Code/blob/main/Image_Classification/MNIST/unzip_MNIST.py)
 
 **Description**: `unzip_MNIST.py` — This script processes all 2D MedMNIST classification datasets. It extracts the downloaded Zenodo `.npz` files, organizes images according to the official train/validation/test split, and further separates them into class-specific folders. The input root should be set to the path of the downloaded `.npz` files.
 
-2. PanNuke
+2. **PanNuke**
    - a. [Image_Classification/PanNuke/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Image_Classification/PanNuke/Preprocess.py)
 
 **Description**: `Preprocess.py` — This script merges images from the three `.parquet` files and organizes them into class-specific folders. `PanNuke_split.csv` defines the dataset split and should be placed in the downloaded data folder. The input root should be set to the directory containing the three `.parquet` files.
 
 ## VQA
 
-1. ROCO_QA
+1. **ROCO_QA**
    - a. [VQA/ROCO_QA/unzip.py](https://github.com/ziz-797/Processing_Code/blob/main/VQA/ROCO_QA/unzip.py)
 
 **Description**: `unzip.py` — This script extracts the five `.parquet` files. The input root should be set to `./ROCO-QA/data`, and `FILE_ORDER` should match the order specified in the script.
 
 ## Vision_Grounding
 
-1. ChestImagenome
+**1. ChestImagenome**
    - a. [Vision_Grounding/ChestImagenome/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/ChestImagenome/Preprocess.py)
 
 **Description**: `Preprocess.py` — This script crops the original images according to the official bounding-box annotations. `gold_crop` is used as the benchmark test set, while `silver_sample_crop` is used as the training set. The input root should be set to `./Chest_imagenome`.
 
-2. Gastrointestinal
+**2. Gastrointestinal**
    - a. [Vision_Grounding/Gastrointestinal/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/Gastrointestinal/Preprocess.py)
 
 **Description**: `Preprocess.py` — This script converts segmentation masks from `PolypGenMSBench` and `Kvasir-SEG` into bounding boxes and cropped images. The split for `Kvasir-SEG` is defined in `split.csv`, which should be placed in the data folder. `PolypGenMSBench` is automatically downloaded and processed. For `Kvasir-SEG`, set the image root to `./Kvasir-SEG/images` and the annotation file to `./Kvasir-SEG/kvasir_bboxes.json`.
 
-3. PanNuke
+**3. PanNuke**
    - a. [Vision_Grounding/PanNuke/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/PanNuke/Preprocess.py)
 
+**Description**: `Preprocess.py` — This script merges images from the three `.parquet` files and converts segmentation masks into bounding-box crops. The input root should be set to `./PanNuke/data`.
 
-4. Skin_Image
+**4. Skin_Image**
    - a. [Vision_Grounding/Skin_Image/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/Skin_Image/Preprocess.py)
 
-5. Ultrasound
+**Description**: `Preprocess.py` — This script converts segmentation masks from `ISIC2018MSBench` and `UWSkinCancerMSBench` into bounding boxes and cropped images. Both datasets are automatically downloaded and processed.
+
+**5. Ultrasound**
    - a. [Vision_Grounding/Ultrasound/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/Ultrasound/Preprocess.py)
 
-6. VindrCXR
+**Description**: `Preprocess.py` — This script converts segmentation masks from `USforKidneyMSBench` and `UltrasoundNerveMSBench` into bounding boxes and cropped images. Both datasets are automatically downloaded and processed.
+
+**6. VindrCXR**
    - a. [Vision_Grounding/VindrCXR/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/VindrCXR/Preprocess.py)
 
-7. VindrMammo
+**Description**: `Preprocess.py` — This script crops the images and follows the official dataset split. The input root should be set to `./VinDr-CXR`.
+
+**7. VindrMammo**
     - a. [Vision_Grounding/VindrMammo/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/VindrMammo/Preprocess.py)
 
-# Dataset arrangement
+**Description**: `Preprocess.py` — This script crops the images and follows the official dataset split. The input root should be set to `./VindrMammo`.
+
 
 ## Dataset Arrangement
+
+After downloading and preprocessing the datasets, please organize the data according to the folder structure below so that it is compatible with the evaluation code.
 
 Organize your data under a single root directory (`DATA_BASEDIR`):
 
