@@ -127,13 +127,19 @@ The following datasets are supported and should be processed using the provided 
 **9. SynthRAD**
    - a. [3D_Task/SynthRAD/cut_slides.py](https://github.com/ziz-797/Processing_Code/blob/main/3D_Task/SynthRAD/cut_slides.py)
 
+**Description**: `cut_slides.py` — This script converts the `ct.nii.gz` and `mr.nii.gz` files from each SynthRAD2023 Task 1 brain and pelvis case into 2D slices. For brain and pelvis data, set the input roots to `./SynthRAD2023/Task1/brain` and `./SynthRAD2023/Task1/pelvis`, respectively.
+ 
 ## Image_Classification
 
 1. MNIST
    - a. [Image_Classification/MNIST/unzip_MNIST.py](https://github.com/ziz-797/Processing_Code/blob/main/Image_Classification/MNIST/unzip_MNIST.py)
 
+**Description**: `unzip_MNIST.py` — This script processes all 2D MedMNIST classification datasets. It extracts the downloaded Zenodo `.npz` files, organizes images according to the official train/validation/test split, and further separates them into class-specific folders. The input root should be set to the path of the downloaded `.npz` files.
+
 2. PanNuke
    - a. [Image_Classification/PanNuke/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Image_Classification/PanNuke/Preprocess.py)
+
+**Description**: `Preprocess.py` — This script merges the three `.parquet` files images and split them into the class-specific folders. The input root should be set to three `.parquet` files.
 
 ## QA
 
