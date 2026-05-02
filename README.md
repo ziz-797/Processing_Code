@@ -146,19 +146,23 @@ The following datasets are supported and should be processed using the provided 
 1. ROCO_QA
    - a. [VQA/ROCO_QA/unzip.py](https://github.com/ziz-797/Processing_Code/blob/main/VQA/ROCO_QA/unzip.py)
 
-**Description**: `Preprocess.py` — This script merges images from the three `.parquet` files and organizes them into class-specific folders. `PanNuke_split.csv` defines the dataset split and should be placed in the downloaded data folder. The input root should be set to the directory containing the three `.parquet` files.
+**Description**: `unzip.py` — This script extracts the five `.parquet` files. The input root should be set to `./ROCO-QA/data`, and `FILE_ORDER` should match the order specified in the script.
 
 ## Vision_Grounding
 
 1. ChestImagenome
    - a. [Vision_Grounding/ChestImagenome/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/ChestImagenome/Preprocess.py)
 
+**Description**: `Preprocess.py` — This script crops the original images according to the official bounding-box annotations. `gold_crop` is used as the benchmark test set, while `silver_sample_crop` is used as the training set. The input root should be set to `./Chest_imagenome`.
+
 2. Gastrointestinal
    - a. [Vision_Grounding/Gastrointestinal/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/Gastrointestinal/Preprocess.py)
 
+**Description**: `Preprocess.py` — This script transforms two segementation dataset: `PolypGenMSBench` and `Kvasir-SEG` mask to bbox and crop. Our split to `Kvasir-SEG` is in the `split.csv` and need be palces into the data folder. 
+
 3. PanNuke
    - a. [Vision_Grounding/PanNuke/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/PanNuke/Preprocess.py)
-   - b. [Vision_Grounding/PanNuke/Test.json](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/PanNuke/Test.json)
+
 
 4. Skin_Image
    - a. [Vision_Grounding/Skin_Image/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/Skin_Image/Preprocess.py)
