@@ -139,17 +139,14 @@ The following datasets are supported and should be processed using the provided 
 2. PanNuke
    - a. [Image_Classification/PanNuke/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Image_Classification/PanNuke/Preprocess.py)
 
-**Description**: `Preprocess.py` — This script merges the three `.parquet` files images and split them into the class-specific folders. The input root should be set to three `.parquet` files.
-
-## QA
-
-1. PublicHealthQA
-   - a. [QA/PublicHealthQA/Clean_text.py](https://github.com/ziz-797/Processing_Code/blob/main/QA/PublicHealthQA/Clean_text.py)
+**Description**: `Preprocess.py` — This script merges images from the three `.parquet` files and organizes them into class-specific folders. `PanNuke_split.csv` defines the dataset split and should be placed in the downloaded data folder. The input root should be set to the directory containing the three `.parquet` files.
 
 ## VQA
 
 1. ROCO_QA
    - a. [VQA/ROCO_QA/unzip.py](https://github.com/ziz-797/Processing_Code/blob/main/VQA/ROCO_QA/unzip.py)
+
+**Description**: `Preprocess.py` — This script merges images from the three `.parquet` files and organizes them into class-specific folders. `PanNuke_split.csv` defines the dataset split and should be placed in the downloaded data folder. The input root should be set to the directory containing the three `.parquet` files.
 
 ## Vision_Grounding
 
