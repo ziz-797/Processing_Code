@@ -158,7 +158,7 @@ The following datasets are supported and should be processed using the provided 
 2. Gastrointestinal
    - a. [Vision_Grounding/Gastrointestinal/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/Gastrointestinal/Preprocess.py)
 
-**Description**: `Preprocess.py` — This script transforms two segementation dataset: `PolypGenMSBench` and `Kvasir-SEG` mask to bbox and crop. Our split to `Kvasir-SEG` is in the `split.csv` and need be palces into the data folder. 
+**Description**: `Preprocess.py` — This script converts segmentation masks from `PolypGenMSBench` and `Kvasir-SEG` into bounding boxes and cropped images. The split for `Kvasir-SEG` is defined in `split.csv`, which should be placed in the data folder. `PolypGenMSBench` is automatically downloaded and processed. For `Kvasir-SEG`, set the image root to `./Kvasir-SEG/images` and the annotation file to `./Kvasir-SEG/kvasir_bboxes.json`.
 
 3. PanNuke
    - a. [Vision_Grounding/PanNuke/Preprocess.py](https://github.com/ziz-797/Processing_Code/blob/main/Vision_Grounding/PanNuke/Preprocess.py)
