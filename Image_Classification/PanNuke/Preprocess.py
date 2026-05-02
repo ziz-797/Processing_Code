@@ -13,7 +13,10 @@ INPUT_PARQUET_PATHS = [
     r"./data/fold3-00000-of-00001.parquet",
 ]
 
-OUTPUT_IMAGE_ROOT = Path(r"./images")
+SPLIT_CSV_PATH = r"./PanNuke_split.csv"
+
+OUTPUT_TRAIN_ROOT = Path(r"./train_images")
+OUTPUT_TEST_ROOT = Path(r"./test_images")
 
 IMAGE_COLUMN = "image"
 CLASS_LABEL_COLUMN = "tissue"
@@ -42,6 +45,20 @@ TISSUE_ID_TO_NAME: dict[int, str] = {
 }
 
 CLASS_ORDER = list(TISSUE_ID_TO_NAME.values())
+
+
+def load_split_mapping(csv_path: str) -> dict[str, str]:
+    df = pd.read_csv(csv_path)
+    df.columns = df.columns.str.strip()
+    mapping = {}
+    for _, row in df.iterrows():
+        img_path = str(row["image_path"]).strip()
+        split = str(row["split"]).strip().lower()
+        mapping[img_path] = split
+    print(f"[INFO] Loaded split CSV: {len(mapping)} entries "
+          f"(train: {sum(1 for v in mapping.values() if v == 'train')}, "
+          f"test: {sum(1 for v in mapping.values() if v == 'test')})")
+    return mapping
 
 
 def is_null_like(x):
@@ -134,14 +151,15 @@ def resolve_class_name(raw_label) -> str | None:
     return TISSUE_ID_TO_NAME.get(tissue_id, None)
 
 
-def process_parquet(parquet_path: Path, fold_num: int) -> dict:
+def process_parquet(parquet_path: Path, fold_num: int, split_mapping: dict[str, str]) -> dict:
     print(f"\n[INFO] Reading fold{fold_num}: {parquet_path.name}")
     df = pd.read_parquet(parquet_path)
     print(f"[INFO] Rows: {len(df)} | Columns: {list(df.columns)}")
 
-    class_counts: dict[str, int] = {}
+    class_counts: dict[str, dict[str, int]] = {}
     saved = 0
     failed = 0
+    no_split = 0
 
     for local_idx, row in enumerate(df.itertuples(index=False)):
         stem = f"fold{fold_num}_{local_idx:08d}"
@@ -158,18 +176,43 @@ def process_parquet(parquet_path: Path, fold_num: int) -> dict:
             failed += 1
             continue
 
+        relative_path = f"{class_name}/{stem}{IMAGE_EXT}"
+        split = split_mapping.get(relative_path, None)
+
+        if split is None:
+            alt_stem = f"fold{fold_num}_{local_idx}"
+            alt_path = f"{class_name}/{alt_stem}{IMAGE_EXT}"
+            split = split_mapping.get(alt_path, None)
+
+        if split is None:
+            print(f"  [WARN] {relative_path} not found in split CSV, skipped")
+            no_split += 1
+            failed += 1
+            continue
+
+        if split == "train":
+            output_root = OUTPUT_TRAIN_ROOT
+        elif split == "test":
+            output_root = OUTPUT_TEST_ROOT
+        else:
+            print(f"  [WARN] {relative_path} has unknown split '{split}', skipped")
+            failed += 1
+            continue
+
         img = try_decode_image(getattr(row, IMAGE_COLUMN))
         if img is None:
             print(f"  [WARN] {stem} failed to decode image, skipped")
             failed += 1
             continue
 
-        out_folder = OUTPUT_IMAGE_ROOT / class_name
+        out_folder = output_root / class_name
         save_path = unique_save_path(out_folder, stem, IMAGE_EXT)
 
         try:
             save_image(img, save_path)
-            class_counts[class_name] = class_counts.get(class_name, 0) + 1
+            if class_name not in class_counts:
+                class_counts[class_name] = {"train": 0, "test": 0}
+            class_counts[class_name][split] += 1
             saved += 1
         except Exception as e:
             print(f"  [ERROR] Failed to save ({save_path}): {e}")
@@ -179,34 +222,55 @@ def process_parquet(parquet_path: Path, fold_num: int) -> dict:
         if done % 500 == 0:
             print(f"  ... Processed {done}/{len(df)} (saved {saved} / failed {failed})")
 
-    print(f"[INFO] fold{fold_num} finished: saved {saved} / failed {failed}")
+    print(f"[INFO] fold{fold_num} finished: saved {saved} / failed {failed} "
+          f"(no_split_info: {no_split})")
     return class_counts
 
 
 def print_summary(total_class_counts: dict):
-    print("\n" + "=" * 60)
-    print(f"[DONE] Output directory: {OUTPUT_IMAGE_ROOT}")
+    print("\n" + "=" * 70)
+    print(f"[DONE] Train directory: {OUTPUT_TRAIN_ROOT}")
+    print(f"[DONE] Test  directory: {OUTPUT_TEST_ROOT}")
     print(f"[DONE] Class statistics (total {len(total_class_counts)} classes):")
+    print(f"  {'Class':<20s} {'Train':>8s} {'Test':>8s} {'Total':>8s}")
+    print(f"  {'-'*20} {'-'*8} {'-'*8} {'-'*8}")
+
+    total_train = 0
+    total_test = 0
     for cls in CLASS_ORDER:
-        print(f"  {cls}: {total_class_counts.get(cls, 0)} images")
-    print("=" * 60)
+        counts = total_class_counts.get(cls, {"train": 0, "test": 0})
+        train_n = counts.get("train", 0)
+        test_n = counts.get("test", 0)
+        total_train += train_n
+        total_test += test_n
+        print(f"  {cls:<20s} {train_n:>8d} {test_n:>8d} {train_n + test_n:>8d}")
+
+    print(f"  {'-'*20} {'-'*8} {'-'*8} {'-'*8}")
+    print(f"  {'TOTAL':<20s} {total_train:>8d} {total_test:>8d} {total_train + total_test:>8d}")
+    print("=" * 70)
 
 
 def main():
-    OUTPUT_IMAGE_ROOT.mkdir(parents=True, exist_ok=True)
-    for cls in CLASS_ORDER:
-        (OUTPUT_IMAGE_ROOT / cls).mkdir(parents=True, exist_ok=True)
+    for root in [OUTPUT_TRAIN_ROOT, OUTPUT_TEST_ROOT]:
+        root.mkdir(parents=True, exist_ok=True)
+        for cls in CLASS_ORDER:
+            (root / cls).mkdir(parents=True, exist_ok=True)
 
-    total_class_counts: dict[str, int] = {}
+    split_mapping = load_split_mapping(SPLIT_CSV_PATH)
+
+    total_class_counts: dict[str, dict[str, int]] = {}
 
     for fold_num, parquet_path_str in enumerate(INPUT_PARQUET_PATHS, start=1):
         parquet_path = Path(parquet_path_str)
         if not parquet_path.exists():
             raise FileNotFoundError(f"Parquet file not found: {parquet_path}")
 
-        class_counts = process_parquet(parquet_path, fold_num)
-        for cls, cnt in class_counts.items():
-            total_class_counts[cls] = total_class_counts.get(cls, 0) + cnt
+        class_counts = process_parquet(parquet_path, fold_num, split_mapping)
+        for cls, counts in class_counts.items():
+            if cls not in total_class_counts:
+                total_class_counts[cls] = {"train": 0, "test": 0}
+            for split_key in ["train", "test"]:
+                total_class_counts[cls][split_key] += counts.get(split_key, 0)
 
     print_summary(total_class_counts)
 
