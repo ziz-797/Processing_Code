@@ -102,7 +102,7 @@ The following datasets are supported and should be processed using the provided 
 **4. ChirrMRI600**
    - a. [3D_Task/ChirrMRI600/cut_slides_split.py](https://github.com/ziz-797/Processing_Code/blob/main/3D_Task/ChirrMRI600/cut_slides_split.py)
   
-**Description**: ChirrMRI600 contains liver MRI cases with different cirrhosis grades and healthy controls. We label healthy cases as 'No liver cirrhosis' and split the healthy cases into training and test sets with a 7:3 ratio. `Cirrhosis_T1_slide_folders.csv` and `Cirrhosis_T2_slide_folders.csv` define the split after adding the healthy cases. `cut_slides_split.py` converts 3D liver MRI volumes into 2D slices and organizes them according to the CSV split. Place the two CSV files in the original data folder and set this folder as the input path.
+**Description**: ChirrMRI600 contains liver MRI cases with different cirrhosis grades and healthy controls. We label healthy cases as 'No liver cirrhosis'. `Cirrhosis_T1_slide_folders.csv` and `Cirrhosis_T2_slide_folders.csv` define the split after adding the healthy cases. `cut_slides_split.py` converts 3D liver MRI volumes into 2D slices and organizes them according to the CSV split. Place the two CSV files in the original data folder and set this folder as the input path.
 
 **5. HaN-Seg**
    - a. [3D_Task/HaN-Seg/cut_slides.py](https://github.com/ziz-797/Processing_Code/blob/main/3D_Task/HaN-Seg/cut_slides.py)
